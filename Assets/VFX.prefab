@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2440849267002493996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 472630481537936817}
+  - component: {fileID: 6245441053247645389}
+  m_Layer: 0
+  m_Name: VFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &472630481537936817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440849267002493996}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6245441053247645389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2440849267002493996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 011471852ecb6f64ca05999fd2e17849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bloodEffect: {fileID: 11400000, guid: 37d11d5f5607a3e4e8fd77c5b930df25, type: 2}
+  _landEffect: {fileID: 11400000, guid: 39581b700f4e89642b4f2b754648dbd4, type: 2}
+  _burnEffect: {fileID: 11400000, guid: ebfea6983ee5bf840bd569313d9ccd8e, type: 2}
+  _poisonEffect: {fileID: 11400000, guid: e4a5451d99eb9844fa420d75e013ac20, type: 2}
+  _concoctionEffect: {fileID: 11400000, guid: 2c909ec7160858b458c96996bd73436e, type: 2}
+  _levelUpEffect: {fileID: 11400000, guid: 2834371d194005549b167dfc26f6dc74, type: 2}
+  _hitEffect: {fileID: 11400000, guid: 39581b700f4e89642b4f2b754648dbd4, type: 2}
+  _criticalEffect: {fileID: 11400000, guid: fd3793ee5cdad2543a7943b4d8dcafed, type: 2}
+  _treeEffect: {fileID: 11400000, guid: f6c99eff278a9a5439cb83b350de856a, type: 2}
+  _plantEffect: {fileID: 11400000, guid: ffddb59aa61b8ad4b88c3fc9149d881f, type: 2}
+  _mineralsEffect: {fileID: 11400000, guid: 14c8d25f77e7b4446a22b567af454a93, type: 2}
+  _fishEffect: {fileID: 11400000, guid: 35bd2f685e6ed6748a2643dfd41dc7ae, type: 2}
+  _artifactEffect: {fileID: 11400000, guid: 430dc0ef34bd96943beb96604d055ba0, type: 2}
+  _insectEffect: {fileID: 11400000, guid: b5512cc52aed08541be6c408a7feb1af, type: 2}
+  _partbreakEffect: {fileID: 11400000, guid: 8b22f626dba6d1e4c90e5630e7a3950b, type: 2}
+  _evolutionEffect: {fileID: 11400000, guid: 254947af8cf724141b65f8910cdd6318, type: 2}
+  _questCompleteEffect: {fileID: 11400000, guid: 6b2105807671ea3478dad5dcef7a86d2, type: 2}

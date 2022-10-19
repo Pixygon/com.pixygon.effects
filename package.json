@@ -1,0 +1,28 @@
+{
+  "name": "com.pixygon.effects",
+  "version": "0.5.0",
+  "displayName": "Pixygon Effects",
+  "description": "Effect-manager and spawner",
+  "unity": "2022.1",
+  "unityRelease": "20f1",
+  "documentationUrl": "https://www.pixygon.io/dev/effects",
+  "changelogUrl": "https://www.pixygon.io/dev/effects/changelog",
+  "licensesUrl": "https://www.pixygon.io/dev/effects/license",
+  "dependencies": {
+    "com.unity.addressables": "1.20.5",
+    "com.pixygon.addressables": "0.5.0",
+    "com.pixygon.idsystem": "0.5.0",
+    "com.pixygon.pagedcontent": "0.5.0"
+ },
+"hideInEditor": false,
+ "keywords": [
+    "Pixygon",
+    "Debug",
+    "Tool"
+  ],
+  "author": {
+    "name": "Pixygon",
+    "email": "pixygon@pixygon.io",
+    "url": "https://www.pixygon.io"
+  }
+}
