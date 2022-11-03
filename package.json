@@ -1,7 +1,7 @@
 {
   "name": "com.pixygon.effects",
-  "version": "0.5.0",
-  "displayName": "Pixygon Effects",
+  "version": "0.5.1",
+  "displayName": "Pixygon - Effects",
   "description": "Effect-manager and spawner",
   "unity": "2022.1",
   "unityRelease": "20f1",
