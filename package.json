@@ -1,6 +1,6 @@
 {
   "name": "com.pixygon.effects",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "displayName": "Pixygon - Effects",
   "description": "Effect-manager and spawner",
   "unity": "2022.1",
@@ -12,12 +12,13 @@
     "com.unity.addressables": "1.20.5",
     "com.pixygon.addressables": "0.5.0",
     "com.pixygon.idsystem": "0.5.0",
-    "com.pixygon.pagedcontent": "0.5.0"
+    "com.pixygon.pagedcontent": "0.5.0",
+    "com.pixygon.debugtool": "0.5.4"
  },
 "hideInEditor": false,
  "keywords": [
     "Pixygon",
-    "Debug",
+    "Effects",
     "Tool"
   ],
   "author": {
