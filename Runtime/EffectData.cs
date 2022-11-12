@@ -4,6 +4,7 @@ using UnityEngine.AddressableAssets;
 
 namespace Pixygon.Effects
 {
+    [CreateAssetMenu(fileName = "New EffectData", menuName = "Pixygon/ID/New EffectData")]
     public class EffectData : IdObject {
         [SerializeField] public string _title;
         [SerializeField] public EffectType _effectType;
