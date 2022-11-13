@@ -4,6 +4,7 @@
 ### Changed
 - Use IDGroup to get and prepare ObjectPools
 - EffectData can now be created from Assets-menu
+- EffectManager.SpawnEffect can now, optionally, also parent effect to something
 
 ## 0.5.1
 ### Changed

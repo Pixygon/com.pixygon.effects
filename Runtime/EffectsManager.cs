@@ -25,16 +25,18 @@ namespace Pixygon.Effects {
                 obj.gameObject.SetActive(true);
             }, obj => {
                 obj.gameObject.SetActive(false);
+                obj.transform.parent = transform;
             }, obj => {
                 Destroy(obj.gameObject);
             }, false, data._startCapacity, data._maxCapacity);
         }
-        public static void SpawnEffect(Vector3 pos, int id) {
+        public static void SpawnEffect(int id, Vector3 pos, Transform parent = null) {
             ObjectPool<EffectObject> pool;
             foreach (var poolObject in _pools.Where(poolObject => poolObject._id == id)) {
                 pool = poolObject._effect;
                 var obj = pool.Get();
                 obj.Initialize(pos, () => pool.Release(obj));
+                if (parent != null) obj.transform.parent = parent;
                 return;
             }
             Log.DebugMessage(DebugGroup.Effects, $"Missing effect: {id}");
