@@ -8,6 +8,7 @@ namespace Pixygon.Effects {
         [SerializeField] private float _killTime = 3f;
         [SerializeField] private bool _sfxByValue;
         [SerializeField] private AudioClip[] _sfxClips;
+        [SerializeField] private bool _usePitching;
 
         private Action _onKill;
         private float _timer;
@@ -17,8 +18,10 @@ namespace Pixygon.Effects {
             _onKill = onKill;
             _timer = _killTime;
             _particles.Play();
-            if(_sfx != null)
+            if(_sfx != null) {
+                if(_usePitching) _sfx.pitch = UnityEngine.Random.Range(.95f, 1.05f);
                 _sfx.Play();
+            }
         }
         public virtual void Initialize(Vector3 pos, int value, Action onKill) {
             transform.position = pos;
@@ -28,7 +31,7 @@ namespace Pixygon.Effects {
             if (_sfx == null) return;
             if(_sfxByValue)
                 _sfx.clip = _sfxClips[value];
-            _sfx.pitch = UnityEngine.Random.Range(.95f, 1.05f);
+            if(_usePitching) _sfx.pitch = UnityEngine.Random.Range(.95f, 1.05f);
             _sfx.Play();
         }
 
