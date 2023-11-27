@@ -59,13 +59,13 @@ namespace Pixygon.Effects {
             Log.DebugMessage(DebugGroup.Effects, $"Missing effect: {id}");
         }
 
-        public static void SpawnScoreEffect(int score, Vector3 pos, Transform parent = null) {
+        public static void SpawnScoreEffect(int score, Vector3 pos, Transform parent = null, bool critical = false, int rank = 0) {
             if (_scorePool == null) {
                 Log.DebugMessage(DebugGroup.Effects, "Missing scoreEffect!");
                 return;
             }
             var obj = _scorePool.Get();
-            obj.Initialize(score, pos, () => _scorePool.Release(obj));
+            obj.Initialize(score, pos, () => _scorePool.Release(obj), critical, rank);
             if (parent != null) obj.transform.parent = parent;
         }
     }
