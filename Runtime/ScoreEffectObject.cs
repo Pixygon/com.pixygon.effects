@@ -9,16 +9,19 @@ namespace Pixygon.Effects
         [SerializeField] private float _killTime = 3f;
         [SerializeField] private TextMeshPro _scoreText;
         [SerializeField] private float _speed;
+        [SerializeField] private Animator _anim;
         
         private Action _onKill;
         private float _timer;
         
-        public void Initialize(int score, Vector3 pos, Action onKill) {
+        public void Initialize(int score, Vector3 pos, Action onKill, bool critical = false, int rank = 0) {
             transform.position = pos;
             _onKill = onKill;
             _timer = _killTime;
             _scoreText.color = Color.white;
             _scoreText.text = score.ToString();
+            _anim?.SetBool("Critical", critical);
+            _anim?.SetInteger("Rank", rank);
         }
         private void Update() {
             transform.Translate(Vector3.up*_speed);
