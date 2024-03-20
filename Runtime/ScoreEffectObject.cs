@@ -20,8 +20,10 @@ namespace Pixygon.Effects
             _timer = _killTime;
             _scoreText.color = Color.white;
             _scoreText.text = score.ToString();
-            _anim?.SetBool("Critical", critical);
-            _anim?.SetInteger("Rank", rank);
+            if(_anim != null) {
+                _anim.SetBool("Critical", critical);
+                _anim.SetInteger("Rank", rank);
+            }
         }
         private void Update() {
             transform.Translate(Vector3.up*_speed);
