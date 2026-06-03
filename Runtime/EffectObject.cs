@@ -1,5 +1,5 @@
-using System;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Pixygon.Effects {
     public class EffectObject : MonoBehaviour {
@@ -10,12 +10,17 @@ namespace Pixygon.Effects {
         [SerializeField] private AudioClip[] _sfxClips;
         [SerializeField] private bool _usePitching;
 
-        private Action _onKill;
+        // The object releases ITSELF back to its pool — set once when the pool
+        // hands it out (EffectsManager.SetupPool). Removes the per-spawn release
+        // closure that used to allocate a delegate on every effect spawn
+        // (hundreds/sec on the hit + kill path).
+        private IObjectPool<EffectObject> _pool;
         private float _timer;
 
-        public virtual void Initialize(Vector3 pos, Action onKill) {
+        public void SetPool(IObjectPool<EffectObject> pool) => _pool = pool;
+
+        public virtual void Initialize(Vector3 pos) {
             transform.position = pos;
-            _onKill = onKill;
             _timer = _killTime;
             _particles.Play();
             if(_sfx != null) {
@@ -23,9 +28,8 @@ namespace Pixygon.Effects {
                 _sfx.Play();
             }
         }
-        public virtual void Initialize(Vector3 pos, int value, Action onKill) {
+        public virtual void Initialize(Vector3 pos, int value) {
             transform.position = pos;
-            _onKill = onKill;
             _timer = _killTime;
             _particles.Play();
             if (_sfx == null) return;
@@ -43,7 +47,7 @@ namespace Pixygon.Effects {
         }
 
         public void OnKill() {
-            _onKill?.Invoke();
+            _pool?.Release(this);
         }
     }
 }

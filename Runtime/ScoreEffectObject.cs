@@ -1,6 +1,6 @@
-using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Pool;
 
 namespace Pixygon.Effects
 {
@@ -10,13 +10,15 @@ namespace Pixygon.Effects
         [SerializeField] private TextMeshPro _scoreText;
         [SerializeField] private float _speed;
         [SerializeField] private Animator _anim;
-        
-        private Action _onKill;
+
+        // Self-release (see EffectObject) — drops the per-spawn delegate alloc.
+        private IObjectPool<ScoreEffectObject> _pool;
         private float _timer;
-        
-        public void Initialize(int score, Vector3 pos, Action onKill, bool critical = false, int rank = 0) {
+
+        public void SetPool(IObjectPool<ScoreEffectObject> pool) => _pool = pool;
+
+        public void Initialize(int score, Vector3 pos, bool critical = false, int rank = 0) {
             transform.position = pos;
-            _onKill = onKill;
             _timer = _killTime;
             _scoreText.color = Color.white;
             _scoreText.text = score.ToString();
@@ -34,7 +36,7 @@ namespace Pixygon.Effects
                 OnKill();
         }
         public void OnKill() {
-            _onKill?.Invoke();
+            _pool?.Release(this);
         }
     }
 }
